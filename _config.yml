@@ -1,14 +1,20 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
+title: MAST Data Catalog Book
+author: Samuel Jackson
 logo: logo.png
+
+exclude_patterns: [data/*, 'data']
+only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
+  exclude_patterns:
+    - 'data'
+    - 'data/*'
 
 # Define the name of the latex output file for PDF builds
 latex:
