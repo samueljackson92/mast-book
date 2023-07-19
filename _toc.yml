@@ -6,3 +6,4 @@ root: intro
 chapters:
 - file: metadatabase_example
 - file: data_archive
+- file: load_spark
