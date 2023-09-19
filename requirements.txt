@@ -2,7 +2,7 @@ jupyter-book
 matplotlib
 numpy
 intake
-datatree
+xarray-datatree
 xarray
 dask
 psycopg2-binary

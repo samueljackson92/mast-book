@@ -4,6 +4,8 @@
 format: jb-book
 root: intro
 chapters:
-- file: metadatabase_example
+- file: api_reference
 - file: data_archive
 - file: load_spark
+- file: load_huggingface
+
