@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Loading with Hugging Face &#8212; MAST Data Catalog Book</title>
+    <title>Loading with Hugging Face &#8212; MAST Data Catalog</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -75,6 +76,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -206,6 +216,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/load_huggingface.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/load_huggingface.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -315,10 +374,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -326,7 +385,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -418,437 +477,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ConnectionRefusedError</span><span class="g g-Whitespace">                    </span>Traceback (most recent call last)
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiohttp/connector.py:980,</span> in <span class="ni">TCPConnector._wrap_create_connection</span><span class="nt">(self, req, timeout, client_error, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">979</span>     <span class="k">async</span> <span class="k">with</span> <span class="n">ceil_timeout</span><span class="p">(</span><span class="n">timeout</span><span class="o">.</span><span class="n">sock_connect</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">980</span>         <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loop</span><span class="o">.</span><span class="n">create_connection</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[return-value]  # noqa</span>
-<span class="g g-Whitespace">    </span><span class="mi">981</span> <span class="k">except</span> <span class="n">cert_errors</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/asyncio/base_events.py:1085,</span> in <span class="ni">BaseEventLoop.create_connection</span><span class="nt">(self, protocol_factory, host, port, ssl, family, proto, flags, sock, local_addr, server_hostname, ssl_handshake_timeout, ssl_shutdown_timeout, happy_eyeballs_delay, interleave)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1084</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">exceptions</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1085</span>     <span class="k">raise</span> <span class="n">exceptions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1086</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1087</span>     <span class="c1"># If they all have the same str(), raise one.</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/asyncio/base_events.py:1069,</span> in <span class="ni">BaseEventLoop.create_connection</span><span class="nt">(self, protocol_factory, host, port, ssl, family, proto, flags, sock, local_addr, server_hostname, ssl_handshake_timeout, ssl_shutdown_timeout, happy_eyeballs_delay, interleave)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1068</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1069</span>     <span class="n">sock</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connect_sock</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span>         <span class="n">exceptions</span><span class="p">,</span> <span class="n">addrinfo</span><span class="p">,</span> <span class="n">laddr_infos</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1071</span>     <span class="k">break</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/asyncio/base_events.py:973,</span> in <span class="ni">BaseEventLoop._connect_sock</span><span class="nt">(self, exceptions, addr_info, local_addr_infos)</span>
-<span class="g g-Whitespace">    </span><span class="mi">972</span>             <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;no matching local address with </span><span class="si">{</span><span class="n">family</span><span class="si">=}</span><span class="s2"> found&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">973</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">sock_connect</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">974</span> <span class="k">return</span> <span class="n">sock</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/asyncio/selector_events.py:634,</span> in <span class="ni">BaseSelectorEventLoop.sock_connect</span><span class="nt">(self, sock, address)</span>
-<span class="g g-Whitespace">    </span><span class="mi">633</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">634</span>     <span class="k">return</span> <span class="k">await</span> <span class="n">fut</span>
-<span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">636</span>     <span class="c1"># Needed to break cycles when an exception occurs.</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/asyncio/selector_events.py:674,</span> in <span class="ni">BaseSelectorEventLoop._sock_connect_cb</span><span class="nt">(self, fut, sock, address)</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span>     <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span>         <span class="c1"># Jump to any except clause below.</span>
-<span class="ne">--&gt; </span><span class="mi">674</span>         <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;Connect call failed </span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">675</span> <span class="k">except</span> <span class="p">(</span><span class="ne">BlockingIOError</span><span class="p">,</span> <span class="ne">InterruptedError</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">676</span>     <span class="c1"># socket is still registered, the callback will be retried later</span>
-
-<span class="ne">ConnectionRefusedError</span>: [Errno 111] Connect call failed (&#39;127.0.0.1&#39;, 9000)
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">ClientConnectorError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/httpsession.py:208,</span> in <span class="ni">AIOHTTPSession.send</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="n">url</span> <span class="o">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">encoded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">208</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers_</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">proxy</span><span class="o">=</span><span class="n">proxy_url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="n">proxy_headers</span><span class="o">=</span><span class="n">proxy_headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span> <span class="n">http_response</span> <span class="o">=</span> <span class="n">aiobotocore</span><span class="o">.</span><span class="n">awsrequest</span><span class="o">.</span><span class="n">AioAWSResponse</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="nb">str</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">),</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">response</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span> <span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiohttp/client.py:536,</span> in <span class="ni">ClientSession._request</span><span class="nt">(self, method, str_or_url, params, data, json, cookies, headers, skip_auto_headers, auth, allow_redirects, max_redirects, compress, chunked, expect100, raise_for_status, read_until_eof, proxy, proxy_auth, timeout, verify_ssl, fingerprint, ssl_context, ssl, proxy_headers, trace_request_ctx, read_bufsize)</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">536</span>         <span class="n">conn</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span>             <span class="n">req</span><span class="p">,</span> <span class="n">traces</span><span class="o">=</span><span class="n">traces</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">real_timeout</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">except</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">TimeoutError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiohttp/connector.py:540,</span> in <span class="ni">BaseConnector.connect</span><span class="nt">(self, req, traces, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">540</span>     <span class="n">proto</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_connection</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">traces</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">541</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiohttp/connector.py:901,</span> in <span class="ni">TCPConnector._create_connection</span><span class="nt">(self, req, traces, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">900</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">901</span>     <span class="n">_</span><span class="p">,</span> <span class="n">proto</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_direct_connection</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">traces</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">903</span> <span class="k">return</span> <span class="n">proto</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiohttp/connector.py:1206,</span> in <span class="ni">TCPConnector._create_direct_connection</span><span class="nt">(self, req, traces, timeout, client_error)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1205</span> <span class="k">assert</span> <span class="n">last_exc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1206</span> <span class="k">raise</span> <span class="n">last_exc</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiohttp/connector.py:1175,</span> in <span class="ni">TCPConnector._create_direct_connection</span><span class="nt">(self, req, traces, timeout, client_error)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1174</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1175</span>     <span class="n">transp</span><span class="p">,</span> <span class="n">proto</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_create_connection</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1176</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_factory</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1177</span>         <span class="n">host</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1178</span>         <span class="n">port</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1180</span>         <span class="n">ssl</span><span class="o">=</span><span class="n">sslcontext</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1181</span>         <span class="n">family</span><span class="o">=</span><span class="n">hinfo</span><span class="p">[</span><span class="s2">&quot;family&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1182</span>         <span class="n">proto</span><span class="o">=</span><span class="n">hinfo</span><span class="p">[</span><span class="s2">&quot;proto&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1183</span>         <span class="n">flags</span><span class="o">=</span><span class="n">hinfo</span><span class="p">[</span><span class="s2">&quot;flags&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span>         <span class="n">server_hostname</span><span class="o">=</span><span class="n">hinfo</span><span class="p">[</span><span class="s2">&quot;hostname&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">sslcontext</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>         <span class="n">local_addr</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_local_addr</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1186</span>         <span class="n">req</span><span class="o">=</span><span class="n">req</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span>         <span class="n">client_error</span><span class="o">=</span><span class="n">client_error</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span> <span class="k">except</span> <span class="n">ClientConnectorError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiohttp/connector.py:988,</span> in <span class="ni">TCPConnector._wrap_create_connection</span><span class="nt">(self, req, timeout, client_error, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">987</span>     <span class="k">raise</span>
-<span class="ne">--&gt; </span><span class="mi">988</span> <span class="k">raise</span> <span class="n">client_error</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">connection_key</span><span class="p">,</span> <span class="n">exc</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
-
-<span class="ne">ClientConnectorError</span>: Cannot connect to host localhost:9000 ssl:default [Connect call failed (&#39;127.0.0.1&#39;, 9000)]
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">EndpointConnectionError</span><span class="g g-Whitespace">                   </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;sljack/mast&#39;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                        <span class="s1">&#39;AMC_PLASMA_CURRENT&#39;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                        <span class="n">split</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                        <span class="n">use_auth_token</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                        <span class="n">streaming</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                        <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">def</span> <span class="nf">slice_pulse</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">time</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/datasets/load.py:1802,</span> in <span class="ni">load_dataset</span><span class="nt">(path, name, data_dir, data_files, split, cache_dir, features, download_config, download_mode, verification_mode, ignore_verifications, keep_in_memory, save_infos, revision, use_auth_token, task, streaming, num_proc, storage_options, **config_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1800</span> <span class="c1"># Return iterable dataset in case of streaming</span>
-<span class="g g-Whitespace">   </span><span class="mi">1801</span> <span class="k">if</span> <span class="n">streaming</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1802</span>     <span class="k">return</span> <span class="n">builder_instance</span><span class="o">.</span><span class="n">as_streaming_dataset</span><span class="p">(</span><span class="n">split</span><span class="o">=</span><span class="n">split</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1804</span> <span class="c1"># Some datasets are already processed on the HF google storage</span>
-<span class="g g-Whitespace">   </span><span class="mi">1805</span> <span class="c1"># Don&#39;t try downloading from Google storage for the packaged datasets as text, json, csv or pandas</span>
-<span class="g g-Whitespace">   </span><span class="mi">1806</span> <span class="n">try_from_hf_gcs</span> <span class="o">=</span> <span class="n">path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_PACKAGED_DATASETS_MODULES</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/datasets/builder.py:1281,</span> in <span class="ni">DatasetBuilder.as_streaming_dataset</span><span class="nt">(self, split, base_path)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1274</span> <span class="n">dl_manager</span> <span class="o">=</span> <span class="n">StreamingDownloadManager</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1275</span>     <span class="n">base_path</span><span class="o">=</span><span class="n">base_path</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_path</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1276</span>     <span class="n">download_config</span><span class="o">=</span><span class="n">DownloadConfig</span><span class="p">(</span><span class="n">use_auth_token</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">use_auth_token</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">storage_options</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1277</span>     <span class="n">dataset_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1278</span>     <span class="n">data_dir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">data_dir</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1279</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1280</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_manual_download</span><span class="p">(</span><span class="n">dl_manager</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1281</span> <span class="n">splits_generators</span> <span class="o">=</span> <span class="p">{</span><span class="n">sg</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">sg</span> <span class="k">for</span> <span class="n">sg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_generators</span><span class="p">(</span><span class="n">dl_manager</span><span class="p">)}</span>
-<span class="g g-Whitespace">   </span><span class="mi">1282</span> <span class="c1"># By default, return all splits</span>
-<span class="g g-Whitespace">   </span><span class="mi">1283</span> <span class="k">if</span> <span class="n">split</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~/.cache/huggingface/modules/datasets_modules/datasets/sljack--mast/fd523016bd28ea84b6b8be6be07bced52a160d77062891ad9b41856779a138ac/mast.py:46,</span> in <span class="ni">MastFusionData._split_generators</span><span class="nt">(self, dl_manager)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="n">s3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_s3_file_system</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="n">store</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3Map</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;mast/</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">s3</span><span class="o">=</span><span class="n">s3</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open_consolidated</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="n">groups</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">handle</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="k">return</span> <span class="p">[</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="n">datasets</span><span class="o">.</span><span class="n">SplitGenerator</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;full&quot;</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="p">]</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/zarr/convenience.py:1299,</span> in <span class="ni">open_consolidated</span><span class="nt">(store, metadata_key, mode, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1296</span>         <span class="n">metadata_key</span> <span class="o">=</span> <span class="s1">&#39;meta/root/consolidated/&#39;</span> <span class="o">+</span> <span class="n">metadata_key</span>
-<span class="g g-Whitespace">   </span><span class="mi">1298</span> <span class="c1"># setup metadata store</span>
-<span class="ne">-&gt; </span><span class="mi">1299</span> <span class="n">meta_store</span> <span class="o">=</span> <span class="n">ConsolidatedStoreClass</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">metadata_key</span><span class="o">=</span><span class="n">metadata_key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1301</span> <span class="c1"># pass through</span>
-<span class="g g-Whitespace">   </span><span class="mi">1302</span> <span class="n">chunk_store</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;chunk_store&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="n">store</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/zarr/storage.py:2890,</span> in <span class="ni">ConsolidatedMetadataStore.__init__</span><span class="nt">(self, store, metadata_key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2887</span> <span class="bp">self</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="n">Store</span><span class="o">.</span><span class="n">_ensure_store</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2889</span> <span class="c1"># retrieve consolidated metadata</span>
-<span class="ne">-&gt; </span><span class="mi">2890</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">json_loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="p">[</span><span class="n">metadata_key</span><span class="p">])</span>
-<span class="g g-Whitespace">   </span><span class="mi">2892</span> <span class="c1"># check format of consolidated metadata</span>
-<span class="g g-Whitespace">   </span><span class="mi">2893</span> <span class="n">consolidated_format</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;zarr_consolidated_format&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/zarr/storage.py:1397,</span> in <span class="ni">FSStore.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1395</span> <span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1396</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1397</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1398</span> <span class="k">except</span> <span class="bp">self</span><span class="o">.</span><span class="n">exceptions</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1399</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/fsspec/mapping.py:143,</span> in <span class="ni">FSMap.__getitem__</span><span class="nt">(self, key, default)</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span> <span class="n">k</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_to_str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">143</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span> <span class="k">except</span> <span class="bp">self</span><span class="o">.</span><span class="n">missing_exceptions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span>     <span class="k">if</span> <span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/fsspec/asyn.py:121,</span> in <span class="ni">sync_wrapper.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span> <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span>     <span class="bp">self</span> <span class="o">=</span> <span class="n">obj</span> <span class="ow">or</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">121</span>     <span class="k">return</span> <span class="n">sync</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/fsspec/asyn.py:106,</span> in <span class="ni">sync</span><span class="nt">(loop, func, timeout, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="k">raise</span> <span class="n">FSTimeoutError</span> <span class="kn">from</span> <span class="nn">return_result</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">return_result</span><span class="p">,</span> <span class="ne">BaseException</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">106</span>     <span class="k">raise</span> <span class="n">return_result</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="k">return</span> <span class="n">return_result</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/fsspec/asyn.py:61,</span> in <span class="ni">_runner</span><span class="nt">(event, coro, result, timeout)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="n">coro</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait_for</span><span class="p">(</span><span class="n">coro</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>     <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">coro</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span>     <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">ex</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/fsspec/asyn.py:433,</span> in <span class="ni">AsyncFileSystem._cat</span><span class="nt">(self, path, recursive, on_error, batch_size, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="n">ex</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_exception</span><span class="p">,</span> <span class="n">out</span><span class="p">),</span> <span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">432</span>     <span class="k">if</span> <span class="n">ex</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">433</span>         <span class="k">raise</span> <span class="n">ex</span>
-<span class="g g-Whitespace">    </span><span class="mi">434</span> <span class="k">if</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">435</span>     <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span>     <span class="ow">or</span> <span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_strip_protocol</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span>     <span class="k">return</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">440</span>         <span class="n">k</span><span class="p">:</span> <span class="n">v</span>
-<span class="nn">    441         for k, v</span> in <span class="ni">zip</span><span class="nt">(paths, out)</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span>         <span class="k">if</span> <span class="n">on_error</span> <span class="o">!=</span> <span class="s2">&quot;omit&quot;</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">is_exception</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">443</span>     <span class="p">}</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/asyncio/tasks.py:442,</span> in <span class="ni">wait_for</span><span class="nt">(fut, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span> <span class="n">loop</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">get_running_loop</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span> <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">442</span>     <span class="k">return</span> <span class="k">await</span> <span class="n">fut</span>
-<span class="g g-Whitespace">    </span><span class="mi">444</span> <span class="k">if</span> <span class="n">timeout</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="n">fut</span> <span class="o">=</span> <span class="n">ensure_future</span><span class="p">(</span><span class="n">fut</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="n">loop</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/s3fs/core.py:1071,</span> in <span class="ni">S3FileSystem._cat_file</span><span class="nt">(self, path, version_id, start, end)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1068</span>     <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span>         <span class="n">resp</span><span class="p">[</span><span class="s2">&quot;Body&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1071</span> <span class="k">return</span> <span class="k">await</span> <span class="n">_error_wrapper</span><span class="p">(</span><span class="n">_call_and_read</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">retries</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/s3fs/core.py:140,</span> in <span class="ni">_error_wrapper</span><span class="nt">(func, args, kwargs, retries)</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="n">err</span> <span class="o">=</span> <span class="n">e</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="n">err</span> <span class="o">=</span> <span class="n">translate_boto_error</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">140</span> <span class="k">raise</span> <span class="n">err</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/s3fs/core.py:113,</span> in <span class="ni">_error_wrapper</span><span class="nt">(func, args, kwargs, retries)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">retries</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">113</span>         <span class="k">return</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">except</span> <span class="n">S3_RETRYABLE_ERRORS</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="n">err</span> <span class="o">=</span> <span class="n">e</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/s3fs/core.py:1058,</span> in <span class="ni">S3FileSystem._cat_file.&lt;locals&gt;._call_and_read</span><span class="nt">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1057</span> <span class="k">async</span> <span class="k">def</span> <span class="nf">_call_and_read</span><span class="p">():</span>
-<span class="ne">-&gt; </span><span class="mi">1058</span>     <span class="n">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_s3</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1059</span>         <span class="s2">&quot;get_object&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1060</span>         <span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1061</span>         <span class="n">Key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1062</span>         <span class="o">**</span><span class="n">version_id_kw</span><span class="p">(</span><span class="n">version_id</span> <span class="ow">or</span> <span class="n">vers</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1063</span>         <span class="o">**</span><span class="n">head</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1064</span>         <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">req_kw</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1065</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1066</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1067</span>         <span class="k">return</span> <span class="k">await</span> <span class="n">resp</span><span class="p">[</span><span class="s2">&quot;Body&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/s3fs/core.py:348,</span> in <span class="ni">S3FileSystem._call_s3</span><span class="nt">(self, method, *akwarglist, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span> <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;CALL: </span><span class="si">%s</span><span class="s2"> - </span><span class="si">%s</span><span class="s2"> - </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">akwarglist</span><span class="p">,</span> <span class="n">kw2</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span> <span class="n">additional_kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_s3_method_kwargs</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">akwarglist</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">348</span> <span class="k">return</span> <span class="k">await</span> <span class="n">_error_wrapper</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span>     <span class="n">method</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">additional_kwargs</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">retries</span>
-<span class="g g-Whitespace">    </span><span class="mi">350</span> <span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/s3fs/core.py:140,</span> in <span class="ni">_error_wrapper</span><span class="nt">(func, args, kwargs, retries)</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="n">err</span> <span class="o">=</span> <span class="n">e</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="n">err</span> <span class="o">=</span> <span class="n">translate_boto_error</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">140</span> <span class="k">raise</span> <span class="n">err</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/s3fs/core.py:113,</span> in <span class="ni">_error_wrapper</span><span class="nt">(func, args, kwargs, retries)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">retries</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">113</span>         <span class="k">return</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">except</span> <span class="n">S3_RETRYABLE_ERRORS</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="n">err</span> <span class="o">=</span> <span class="n">e</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/client.py:361,</span> in <span class="ni">AioBaseClient._make_api_call</span><span class="nt">(self, operation_name, api_params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">359</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="n">apply_request_checksum</span><span class="p">(</span><span class="n">request_dict</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">361</span>     <span class="n">http</span><span class="p">,</span> <span class="n">parsed_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span>         <span class="n">operation_model</span><span class="p">,</span> <span class="n">request_dict</span><span class="p">,</span> <span class="n">request_context</span>
-<span class="g g-Whitespace">    </span><span class="mi">363</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">365</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span>     <span class="s1">&#39;after-call.</span><span class="si">{service_id}</span><span class="s1">.</span><span class="si">{operation_name}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">367</span>         <span class="n">service_id</span><span class="o">=</span><span class="n">service_id</span><span class="p">,</span> <span class="n">operation_name</span><span class="o">=</span><span class="n">operation_name</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span>     <span class="n">context</span><span class="o">=</span><span class="n">request_context</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">375</span> <span class="k">if</span> <span class="n">http</span><span class="o">.</span><span class="n">status_code</span> <span class="o">&gt;=</span> <span class="mi">300</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/client.py:386,</span> in <span class="ni">AioBaseClient._make_request</span><span class="nt">(self, operation_model, request_dict, request_context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span> <span class="k">async</span> <span class="k">def</span> <span class="nf">_make_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">operation_model</span><span class="p">,</span> <span class="n">request_dict</span><span class="p">,</span> <span class="n">request_context</span>
-<span class="g g-Whitespace">    </span><span class="mi">384</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">386</span>         <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_endpoint</span><span class="o">.</span><span class="n">make_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">387</span>             <span class="n">operation_model</span><span class="p">,</span> <span class="n">request_dict</span>
-<span class="g g-Whitespace">    </span><span class="mi">388</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">389</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">390</span>         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">391</span>             <span class="s1">&#39;after-call-error.</span><span class="si">{service_id}</span><span class="s1">.</span><span class="si">{operation_name}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">392</span>                 <span class="n">service_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_service_model</span><span class="o">.</span><span class="n">service_id</span><span class="o">.</span><span class="n">hyphenize</span><span class="p">(),</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">396</span>             <span class="n">context</span><span class="o">=</span><span class="n">request_context</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">397</span>         <span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/endpoint.py:100,</span> in <span class="ni">AioEndpoint._send_request</span><span class="nt">(self, request_dict, operation_model)</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span> <span class="n">request</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_request</span><span class="p">(</span><span class="n">request_dict</span><span class="p">,</span> <span class="n">operation_model</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span> <span class="n">success_response</span><span class="p">,</span> <span class="n">exception</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_response</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="n">request</span><span class="p">,</span> <span class="n">operation_model</span><span class="p">,</span> <span class="n">context</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">100</span> <span class="k">while</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_needs_retry</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="n">attempts</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="n">operation_model</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span>     <span class="n">request_dict</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="n">success_response</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="n">exception</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update_retries_context</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">attempts</span><span class="p">,</span> <span class="n">success_response</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/endpoint.py:262,</span> in <span class="ni">AioEndpoint._needs_retry</span><span class="nt">(self, attempts, operation_model, request_dict, response, caught_exception)</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span> <span class="n">service_id</span> <span class="o">=</span> <span class="n">operation_model</span><span class="o">.</span><span class="n">service_model</span><span class="o">.</span><span class="n">service_id</span><span class="o">.</span><span class="n">hyphenize</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span> <span class="n">event_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;needs-retry.</span><span class="si">{</span><span class="n">service_id</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">operation_model</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">262</span> <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event_emitter</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span>     <span class="n">event_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">264</span>     <span class="n">response</span><span class="o">=</span><span class="n">response</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">265</span>     <span class="n">endpoint</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span>     <span class="n">operation</span><span class="o">=</span><span class="n">operation_model</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="n">attempts</span><span class="o">=</span><span class="n">attempts</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span>     <span class="n">caught_exception</span><span class="o">=</span><span class="n">caught_exception</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="n">request_dict</span><span class="o">=</span><span class="n">request_dict</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="n">handler_response</span> <span class="o">=</span> <span class="n">first_non_none_response</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span> <span class="k">if</span> <span class="n">handler_response</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/hooks.py:66,</span> in <span class="ni">AioHierarchicalEmitter._emit</span><span class="nt">(self, event_name, kwargs, stop_on_response)</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Event </span><span class="si">%s</span><span class="s1">: calling handler </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">event_name</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="c1"># Await the handler if its a coroutine.</span>
-<span class="ne">---&gt; </span><span class="mi">66</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">resolve_awaitable</span><span class="p">(</span><span class="n">handler</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">handler</span><span class="p">,</span> <span class="n">response</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span> <span class="k">if</span> <span class="n">stop_on_response</span> <span class="ow">and</span> <span class="n">response</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/_helpers.py:15,</span> in <span class="ni">resolve_awaitable</span><span class="nt">(obj)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">async</span> <span class="k">def</span> <span class="nf">resolve_awaitable</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="k">if</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isawaitable</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">15</span>         <span class="k">return</span> <span class="k">await</span> <span class="n">obj</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="k">return</span> <span class="n">obj</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/retryhandler.py:107,</span> in <span class="ni">AioRetryHandler._call</span><span class="nt">(self, attempts, response, caught_exception, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="n">retries_context</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;request_dict&#39;</span><span class="p">][</span><span class="s1">&#39;context&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;retries&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="n">checker_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;retries_context&#39;</span><span class="p">:</span> <span class="n">retries_context</span><span class="p">})</span>
-<span class="ne">--&gt; </span><span class="mi">107</span> <span class="k">if</span> <span class="k">await</span> <span class="n">resolve_awaitable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_checker</span><span class="p">(</span><span class="o">**</span><span class="n">checker_kwargs</span><span class="p">)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">(</span><span class="n">attempts</span><span class="o">=</span><span class="n">attempts</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Retry needed, action of: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/_helpers.py:15,</span> in <span class="ni">resolve_awaitable</span><span class="nt">(obj)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">async</span> <span class="k">def</span> <span class="nf">resolve_awaitable</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="k">if</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isawaitable</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">15</span>         <span class="k">return</span> <span class="k">await</span> <span class="n">obj</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="k">return</span> <span class="n">obj</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/retryhandler.py:126,</span> in <span class="ni">AioMaxAttemptsDecorator._call</span><span class="nt">(self, attempt_number, response, caught_exception, retries_context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="k">if</span> <span class="n">retries_context</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span>     <span class="n">retries_context</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span>         <span class="n">retries_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_attempts</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">126</span> <span class="n">should_retry</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_should_retry</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="n">attempt_number</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">caught_exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="k">if</span> <span class="n">should_retry</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="k">if</span> <span class="n">attempt_number</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_attempts</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>         <span class="c1"># explicitly set MaxAttemptsReached</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/retryhandler.py:165,</span> in <span class="ni">AioMaxAttemptsDecorator._should_retry</span><span class="nt">(self, attempt_number, response, caught_exception)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span>         <span class="k">return</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="c1"># If we&#39;ve exceeded the max attempts we just let the exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="c1"># propagate if one has occurred.</span>
-<span class="ne">--&gt; </span><span class="mi">165</span>     <span class="k">return</span> <span class="k">await</span> <span class="n">resolve_awaitable</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_checker</span><span class="p">(</span><span class="n">attempt_number</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">caught_exception</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">167</span>     <span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/_helpers.py:15,</span> in <span class="ni">resolve_awaitable</span><span class="nt">(obj)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">async</span> <span class="k">def</span> <span class="nf">resolve_awaitable</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="k">if</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isawaitable</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">15</span>         <span class="k">return</span> <span class="k">await</span> <span class="n">obj</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="k">return</span> <span class="n">obj</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/retryhandler.py:174,</span> in <span class="ni">AioMultiChecker._call</span><span class="nt">(self, attempt_number, response, caught_exception)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="k">async</span> <span class="k">def</span> <span class="nf">_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attempt_number</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">caught_exception</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="k">for</span> <span class="n">checker</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_checkers</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span>         <span class="n">checker_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">resolve_awaitable</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">174</span>             <span class="n">checker</span><span class="p">(</span><span class="n">attempt_number</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">caught_exception</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>         <span class="k">if</span> <span class="n">checker_response</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>             <span class="k">return</span> <span class="n">checker_response</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/botocore/retryhandler.py:247,</span> in <span class="ni">BaseChecker.__call__</span><span class="nt">(self, attempt_number, response, caught_exception)</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_response</span><span class="p">(</span><span class="n">attempt_number</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span> <span class="k">elif</span> <span class="n">caught_exception</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">247</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_caught_exception</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">248</span>         <span class="n">attempt_number</span><span class="p">,</span> <span class="n">caught_exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Both response and caught_exception are None.&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/botocore/retryhandler.py:416,</span> in <span class="ni">ExceptionRaiser._check_caught_exception</span><span class="nt">(self, attempt_number, caught_exception)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="k">def</span> <span class="nf">_check_caught_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attempt_number</span><span class="p">,</span> <span class="n">caught_exception</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span>     <span class="c1"># This is implementation specific, but this class is useful by</span>
-<span class="g g-Whitespace">    </span><span class="mi">410</span>     <span class="c1"># coordinating with the MaxAttemptsDecorator.</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span>     <span class="c1"># the MaxAttemptsDecorator is not interested in retrying the exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">415</span>     <span class="c1"># then this exception just propogates out past the retry code.</span>
-<span class="ne">--&gt; </span><span class="mi">416</span>     <span class="k">raise</span> <span class="n">caught_exception</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/endpoint.py:181,</span> in <span class="ni">AioEndpoint._do_get_response</span><span class="nt">(self, request, operation_model, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="n">http_response</span> <span class="o">=</span> <span class="n">first_non_none_response</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="k">if</span> <span class="n">http_response</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">181</span>         <span class="n">http_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span> <span class="k">except</span> <span class="n">HTTPClientError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="k">return</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/endpoint.py:285,</span> in <span class="ni">AioEndpoint._send</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="k">async</span> <span class="k">def</span> <span class="nf">_send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">285</span>     <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">http_session</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/mast/lib/python3.11/site-packages/aiobotocore/httpsession.py:253,</span> in <span class="ni">AIOHTTPSession.send</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span>         <span class="k">raise</span> <span class="n">ReadTimeoutError</span><span class="p">(</span><span class="n">endpoint_url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">e</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">248</span> <span class="k">except</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="n">ClientConnectorError</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="n">ClientConnectionError</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="n">socket</span><span class="o">.</span><span class="n">gaierror</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">252</span> <span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">253</span>     <span class="k">raise</span> <span class="n">EndpointConnectionError</span><span class="p">(</span><span class="n">endpoint_url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">e</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span> <span class="k">except</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">TimeoutError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">255</span>     <span class="k">raise</span> <span class="n">ReadTimeoutError</span><span class="p">(</span><span class="n">endpoint_url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">e</span><span class="p">)</span>
-
-<span class="ne">EndpointConnectionError</span>: Could not connect to the endpoint URL: &quot;http://localhost:9000/mast/amc_test.zarr/.zmetadata&quot;
-</pre></div>
-</div>
+<img alt="_images/982312386c7a95cd3467e0b94ffe6b63f0deabd96c6d8f634aaa7266375d2041.png" src="_images/982312386c7a95cd3467e0b94ffe6b63f0deabd96c6d8f634aaa7266375d2041.png" />
 </div>
 </div>
 </section>
@@ -879,11 +508,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="load_spark.html"
@@ -894,10 +522,7 @@ document.write(`
         <p class="prev-next-title">Loading MAST Data With Spark</p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -960,8 +585,8 @@ By Samuel Jackson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>

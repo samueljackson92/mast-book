@@ -1,17 +1,4 @@
 Traceback (most recent call last):
-  File "/home/ubuntu/miniconda3/envs/mast/lib/python3.11/site-packages/nbclient/client.py", line 778, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/miniconda3/envs/mast/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 182, in ensure_async
-    result = await obj
-             ^^^^^^^^^
-  File "/home/ubuntu/miniconda3/envs/mast/lib/python3.11/site-packages/jupyter_client/channels.py", line 315, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/home/ubuntu/miniconda3/envs/mast/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
   File "/home/ubuntu/miniconda3/envs/mast/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
@@ -25,19 +12,92 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^
   File "/home/ubuntu/miniconda3/envs/mast/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/home/ubuntu/miniconda3/envs/mast/lib/python3.11/site-packages/nbclient/client.py", line 1001, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/miniconda3/envs/mast/lib/python3.11/site-packages/nbclient/client.py", line 802, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/miniconda3/envs/mast/lib/python3.11/site-packages/nbclient/client.py", line 852, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
+  File "/home/ubuntu/miniconda3/envs/mast/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/ubuntu/miniconda3/envs/mast/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
 catalog = intake.open_catalog(Path('~/mast-data/mast/catalog.yml').expanduser())
 catalog
--------------------
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[2], line 1[0m
+[0;32m----> 1[0m catalog [38;5;241m=[39m [43mintake[49m[38;5;241;43m.[39;49m[43mopen_catalog[49m[43m([49m[43mPath[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43m~/mast-data/mast/catalog.yml[39;49m[38;5;124;43m'[39;49m[43m)[49m[38;5;241;43m.[39;49m[43mexpanduser[49m[43m([49m[43m)[49m[43m)[49m
+[1;32m      2[0m catalog
+
+File [0;32m~/miniconda3/envs/mast/lib/python3.11/site-packages/intake/__init__.py:163[0m, in [0;36mopen_catalog[0;34m(uri, **kwargs)[0m
+[1;32m    156[0m [38;5;28;01mif[39;00m driver [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m registry:
+[1;32m    157[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m    158[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mUnknown catalog driver [39m[38;5;124m'[39m[38;5;132;01m{[39;00mdriver[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m. [39m[38;5;124m"[39m
+[1;32m    159[0m         [38;5;124m"[39m[38;5;124mDo you need to install a new driver from the plugin directory? [39m[38;5;124m"[39m
+[1;32m    160[0m         [38;5;124m"[39m[38;5;124mhttps://intake.readthedocs.io/en/latest/plugin-directory.html[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[1;32m    161[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mCurrent registry: [39m[38;5;132;01m{[39;00m[38;5;28mlist[39m([38;5;28msorted[39m(registry))[38;5;132;01m}[39;00m[38;5;124m"[39m
+[1;32m    162[0m     )
+[0;32m--> 163[0m [38;5;28;01mreturn[39;00m [43mregistry[49m[43m[[49m[43mdriver[49m[43m][49m[43m([49m[43muri[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/mast/lib/python3.11/site-packages/intake/catalog/local.py:549[0m, in [0;36mYAMLFileCatalog.__init__[0;34m(self, path, text, autoreload, **kwargs)[0m
+[1;32m    547[0m [38;5;28mself[39m[38;5;241m.[39mfilesystem [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124mfs[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m)
+[1;32m    548[0m [38;5;28mself[39m[38;5;241m.[39maccess [38;5;241m=[39m [38;5;124m"[39m[38;5;124mname[39m[38;5;124m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m kwargs
+[0;32m--> 549[0m [38;5;28;43msuper[39;49m[43m([49m[43mYAMLFileCatalog[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__init__[39;49m[43m([49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/mast/lib/python3.11/site-packages/intake/catalog/base.py:121[0m, in [0;36mCatalog.__init__[0;34m(self, entries, name, description, metadata, ttl, getenv, getshell, persist_mode, storage_options, user_parameters)[0m
+[1;32m    119[0m [38;5;28mself[39m[38;5;241m.[39mupdated [38;5;241m=[39m time[38;5;241m.[39mtime()
+[1;32m    120[0m [38;5;28mself[39m[38;5;241m.[39m_entries [38;5;241m=[39m entries [38;5;28;01mif[39;00m entries [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28mself[39m[38;5;241m.[39m_make_entries_container()
+[0;32m--> 121[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mforce_reload[49m[43m([49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/mast/lib/python3.11/site-packages/intake/catalog/base.py:179[0m, in [0;36mCatalog.force_reload[0;34m(self)[0m
+[1;32m    177[0m [38;5;250m[39m[38;5;124;03m"""Imperative reload data now"""[39;00m
+[1;32m    178[0m [38;5;28mself[39m[38;5;241m.[39mupdated [38;5;241m=[39m time[38;5;241m.[39mtime()
+[0;32m--> 179[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_load[49m[43m([49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/mast/lib/python3.11/site-packages/intake/catalog/local.py:577[0m, in [0;36mYAMLFileCatalog._load[0;34m(self, reload)[0m
+[1;32m    574[0m     file_open [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mfilesystem[38;5;241m.[39mopen([38;5;28mself[39m[38;5;241m.[39mpath, mode[38;5;241m=[39m[38;5;124m"[39m[38;5;124mrb[39m[38;5;124m"[39m)
+[1;32m    575[0m [38;5;28mself[39m[38;5;241m.[39m_dir [38;5;241m=[39m get_dir([38;5;28mself[39m[38;5;241m.[39mpath)
+[0;32m--> 577[0m [43m[49m[38;5;28;43;01mwith[39;49;00m[43m [49m[43mfile_open[49m[43m [49m[38;5;28;43;01mas[39;49;00m[43m [49m[43mf[49m[43m:[49m
+[1;32m    578[0m [43m    [49m[43mtext[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mf[49m[38;5;241;43m.[39;49m[43mread[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mdecode[49m[43m([49m[43m)[49m
+[1;32m    579[0m [38;5;28;01mif[39;00m [38;5;124m"[39m[38;5;124m!template [39m[38;5;124m"[39m [38;5;129;01min[39;00m text:
+
+File [0;32m~/miniconda3/envs/mast/lib/python3.11/site-packages/fsspec/core.py:102[0m, in [0;36mOpenFile.__enter__[0;34m(self)[0m
+[1;32m     99[0m [38;5;28;01mdef[39;00m [38;5;21m__enter__[39m([38;5;28mself[39m):
+[1;32m    100[0m     mode [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mmode[38;5;241m.[39mreplace([38;5;124m"[39m[38;5;124mt[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m"[39m)[38;5;241m.[39mreplace([38;5;124m"[39m[38;5;124mb[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m"[39m) [38;5;241m+[39m [38;5;124m"[39m[38;5;124mb[39m[38;5;124m"[39m
+[0;32m--> 102[0m     f [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mfs[49m[38;5;241;43m.[39;49m[43mopen[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mpath[49m[43m,[49m[43m [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m)[49m
+[1;32m    104[0m     [38;5;28mself[39m[38;5;241m.[39mfobjects [38;5;241m=[39m [f]
+[1;32m    106[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mcompression [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [0;32m~/miniconda3/envs/mast/lib/python3.11/site-packages/fsspec/spec.py:1241[0m, in [0;36mAbstractFileSystem.open[0;34m(self, path, mode, block_size, cache_options, compression, **kwargs)[0m
+[1;32m   1239[0m [38;5;28;01melse[39;00m:
+[1;32m   1240[0m     ac [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124mautocommit[39m[38;5;124m"[39m, [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_intrans)
+[0;32m-> 1241[0m     f [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_open[49m[43m([49m
+[1;32m   1242[0m [43m        [49m[43mpath[49m[43m,[49m
+[1;32m   1243[0m [43m        [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m,[49m
+[1;32m   1244[0m [43m        [49m[43mblock_size[49m[38;5;241;43m=[39;49m[43mblock_size[49m[43m,[49m
+[1;32m   1245[0m [43m        [49m[43mautocommit[49m[38;5;241;43m=[39;49m[43mac[49m[43m,[49m
+[1;32m   1246[0m [43m        [49m[43mcache_options[49m[38;5;241;43m=[39;49m[43mcache_options[49m[43m,[49m
+[1;32m   1247[0m [43m        [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[1;32m   1248[0m [43m    [49m[43m)[49m
+[1;32m   1249[0m     [38;5;28;01mif[39;00m compression [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   1250[0m         [38;5;28;01mfrom[39;00m [38;5;21;01mfsspec[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcompression[39;00m [38;5;28;01mimport[39;00m compr
+
+File [0;32m~/miniconda3/envs/mast/lib/python3.11/site-packages/fsspec/implementations/local.py:184[0m, in [0;36mLocalFileSystem._open[0;34m(self, path, mode, block_size, **kwargs)[0m
+[1;32m    182[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mauto_mkdir [38;5;129;01mand[39;00m [38;5;124m"[39m[38;5;124mw[39m[38;5;124m"[39m [38;5;129;01min[39;00m mode:
+[1;32m    183[0m     [38;5;28mself[39m[38;5;241m.[39mmakedirs([38;5;28mself[39m[38;5;241m.[39m_parent(path), exist_ok[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[0;32m--> 184[0m [38;5;28;01mreturn[39;00m [43mLocalFileOpener[49m[43m([49m[43mpath[49m[43m,[49m[43m [49m[43mmode[49m[43m,[49m[43m [49m[43mfs[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/mast/lib/python3.11/site-packages/fsspec/implementations/local.py:315[0m, in [0;36mLocalFileOpener.__init__[0;34m(self, path, mode, autocommit, fs, compression, **kwargs)[0m
+[1;32m    313[0m [38;5;28mself[39m[38;5;241m.[39mcompression [38;5;241m=[39m get_compression(path, compression)
+[1;32m    314[0m [38;5;28mself[39m[38;5;241m.[39mblocksize [38;5;241m=[39m io[38;5;241m.[39mDEFAULT_BUFFER_SIZE
+[0;32m--> 315[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_open[49m[43m([49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/mast/lib/python3.11/site-packages/fsspec/implementations/local.py:320[0m, in [0;36mLocalFileOpener._open[0;34m(self)[0m
+[1;32m    318[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mf [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mor[39;00m [38;5;28mself[39m[38;5;241m.[39mf[38;5;241m.[39mclosed:
+[1;32m    319[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mautocommit [38;5;129;01mor[39;00m [38;5;124m"[39m[38;5;124mw[39m[38;5;124m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mmode:
+[0;32m--> 320[0m         [38;5;28mself[39m[38;5;241m.[39mf [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mpath[49m[43m,[49m[43m [49m[43mmode[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmode[49m[43m)[49m
+[1;32m    321[0m         [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mcompression:
+[1;32m    322[0m             compress [38;5;241m=[39m compr[[38;5;28mself[39m[38;5;241m.[39mcompression]
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/home/ubuntu/mast-data/mast/catalog.yml'
 
