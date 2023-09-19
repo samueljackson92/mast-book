@@ -471,11 +471,11 @@ document.write(`
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/09/19 12:59:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/09/19 13:38:37 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/09/19 12:59:48 WARN Utils: Service &#39;SparkUI&#39; could not bind on port 4040. Attempting port 4041.
-23/09/19 12:59:48 WARN Utils: Service &#39;SparkUI&#39; could not bind on port 4041. Attempting port 4042.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/09/19 13:38:39 WARN Utils: Service &#39;SparkUI&#39; could not bind on port 4040. Attempting port 4041.
+23/09/19 13:38:39 WARN Utils: Service &#39;SparkUI&#39; could not bind on port 4041. Attempting port 4042.
 </pre></div>
 </div>
 </div>
@@ -554,11 +554,13 @@ Name: 568, dtype: object
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 0:&gt;                                                          (0 + 1) / 1]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 0:===========================================================(1 + 0) / 1]
+
+                                                                                
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 88.6 ms, sys: 4.15 ms, total: 92.8 ms
-Wall time: 4.71 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 74.4 ms, sys: 19 ms, total: 93.4 ms
+Wall time: 4.73 s
 </pre></div>
 </div>
 <img alt="_images/34e2d08fc050b5884341fd2a3ef8f868323eb1ff89f366176cb9451dd03dfe1d.png" src="_images/34e2d08fc050b5884341fd2a3ef8f868323eb1ff89f366176cb9451dd03dfe1d.png" />
@@ -625,56 +627,60 @@ Wall time: 4.71 s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:===&gt;                                                     (6 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:====&gt;                                                    (8 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:===&gt;                                                     (7 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=====&gt;                                                  (10 + 4) / 100]
-
-[Stage 1:======&gt;                                                 (11 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=====&gt;                                                   (9 + 4) / 100]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:======&gt;                                                 (11 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:======&gt;                                                 (12 + 4) / 100]
-23/09/19 13:00:00 WARN TaskSetManager: Stage 1 contains a task of very large size (1953 KiB). The maximum recommended task size is 1000 KiB.
+23/09/19 13:38:52 WARN TaskSetManager: Stage 1 contains a task of very large size (1953 KiB). The maximum recommended task size is 1000 KiB.
 
-[Stage 1:=======&gt;                                                (13 + 4) / 100]
+[Stage 1:=======&gt;                                                (14 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:========&gt;                                               (15 + 4) / 100]
-
-[Stage 1:========&gt;                                               (16 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:========&gt;                                               (16 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=========&gt;                                              (17 + 4) / 100]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:==========&gt;                                             (18 + 4) / 100]
 
-[Stage 1:==========&gt;                                             (18 + 4) / 100]
+[Stage 1:==========&gt;                                             (19 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:==========&gt;                                             (19 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:===========&gt;                                            (20 + 4) / 100]
+
+[Stage 1:============&gt;                                           (22 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:===========&gt;                                            (21 + 4) / 100]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:============&gt;                                           (22 + 4) / 100]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=============&gt;                                          (24 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:============&gt;                                           (23 + 4) / 100]
+
+[Stage 1:=============&gt;                                          (24 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:==============&gt;                                         (26 + 4) / 100]
+
+[Stage 1:===============&gt;                                        (27 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:===============&gt;                                        (27 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:===============&gt;                                        (28 + 4) / 100]
 
 [Stage 1:================&gt;                                       (30 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=================&gt;                                      (31 + 4) / 100]
+
+[Stage 1:=================&gt;                                      (32 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=================&gt;                                      (32 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:==================&gt;                                     (33 + 4) / 100]
 
-[Stage 1:==================&gt;                                     (33 + 4) / 100]
+[Stage 1:===================&gt;                                    (34 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:===================&gt;                                    (35 + 4) / 100]
@@ -682,17 +688,22 @@ Wall time: 4.71 s
 [Stage 1:====================&gt;                                   (37 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:======================&gt;                                 (40 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=====================&gt;                                  (38 + 4) / 100]
 
-[Stage 1:======================&gt;                                 (41 + 4) / 100]
+[Stage 1:======================&gt;                                 (40 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=======================&gt;                                (42 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:======================&gt;                                 (41 + 4) / 100]
+
+[Stage 1:=======================&gt;                                (42 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:========================&gt;                               (44 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:========================&gt;                               (43 + 5) / 100]
 
 [Stage 1:=========================&gt;                              (45 + 4) / 100]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=========================&gt;                              (46 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:==========================&gt;                             (47 + 4) / 100]
@@ -711,79 +722,81 @@ Wall time: 4.71 s
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:===============================&gt;                        (57 + 4) / 100]
+
+[Stage 1:================================&gt;                       (58 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=================================&gt;                      (59 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=================================&gt;                      (60 + 4) / 100]
 
 [Stage 1:==================================&gt;                     (61 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:===================================&gt;                    (63 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:==================================&gt;                     (62 + 4) / 100]
 
-[Stage 1:====================================&gt;                   (65 + 4) / 100]
+[Stage 1:===================================&gt;                    (64 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:====================================&gt;                   (66 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:====================================&gt;                   (65 + 4) / 100]
+
+[Stage 1:====================================&gt;                   (66 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=====================================&gt;                  (67 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:======================================&gt;                 (68 + 4) / 100]
 
 [Stage 1:======================================&gt;                 (69 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=======================================&gt;                (70 + 4) / 100]
 
-[Stage 1:=======================================&gt;                (71 + 4) / 100]
+[Stage 1:========================================&gt;               (72 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:========================================&gt;               (73 + 4) / 100]
-
-[Stage 1:==========================================&gt;             (75 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:==========================================&gt;             (76 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:==========================================&gt;             (75 + 4) / 100]
 
 [Stage 1:===========================================&gt;            (77 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:============================================&gt;           (79 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:===========================================&gt;            (77 + 5) / 100]
 
-[Stage 1:============================================&gt;           (80 + 4) / 100]
+[Stage 1:============================================&gt;           (79 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=============================================&gt;          (82 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=============================================&gt;          (81 + 4) / 100]
 
-[Stage 1:==============================================&gt;         (83 + 4) / 100]
+[Stage 1:=============================================&gt;          (82 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:===============================================&gt;        (84 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:==============================================&gt;         (83 + 4) / 100]
 
-[Stage 1:================================================&gt;       (86 + 4) / 100]
+[Stage 1:===============================================&gt;        (84 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:================================================&gt;       (87 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:================================================&gt;       (86 + 4) / 100]
 
-[Stage 1:=================================================&gt;      (89 + 4) / 100]
+[Stage 1:=================================================&gt;      (88 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:==================================================&gt;     (91 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:==================================================&gt;     (90 + 4) / 100]
+
+[Stage 1:===================================================&gt;    (92 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:====================================================&gt;   (94 + 4) / 100]
-
-[Stage 1:=====================================================&gt;  (95 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=====================================================&gt;  (96 + 4) / 100]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 1:=======================================================&gt;(99 + 1) / 100]
 
-[Stage 1:=======================================================&gt;(99 + 1) / 100]
+                                                                                
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 297 ms, sys: 133 ms, total: 430 ms
-Wall time: 17.6 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 291 ms, sys: 106 ms, total: 397 ms
+Wall time: 19.1 s
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;current&#39;)
@@ -838,9 +851,7 @@ Wall time: 17.6 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:&gt;                                                        (1 + 4) / 100]
-
-[Stage 2:==&gt;                                                      (4 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:==&gt;                                                      (4 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:====&gt;                                                    (8 + 4) / 100]
@@ -848,7 +859,7 @@ Wall time: 17.6 s
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=======&gt;                                                (13 + 4) / 100]
 
-[Stage 2:==========&gt;                                             (18 + 4) / 100]
+[Stage 2:==========&gt;                                             (19 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=============&gt;                                          (24 + 4) / 100]
@@ -863,42 +874,47 @@ Wall time: 17.6 s
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:===================&gt;                                    (34 + 4) / 100]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:===================&gt;                                    (35 + 4) / 100]
 
-[Stage 2:====================&gt;                                   (37 + 4) / 100]
+[Stage 2:===================&gt;                                    (35 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=====================&gt;                                  (38 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:====================&gt;                                   (36 + 4) / 100]
 
-[Stage 2:=====================&gt;                                  (39 + 4) / 100]
+[Stage 2:====================&gt;                                   (37 + 5) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:======================&gt;                                 (41 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=====================&gt;                                  (39 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=======================&gt;                                (42 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:======================&gt;                                 (40 + 4) / 100]
 
-[Stage 2:=========================&gt;                              (45 + 6) / 100]
+[Stage 2:======================&gt;                                 (41 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:===========================&gt;                            (49 + 5) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:========================&gt;                               (43 + 6) / 100]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=========================&gt;                              (46 + 6) / 100]
 
-[Stage 2:==============================&gt;                         (54 + 4) / 100]
+[Stage 2:=============================&gt;                          (52 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:===============================&gt;                        (57 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:==============================&gt;                         (55 + 4) / 100]
 
-[Stage 2:==================================&gt;                     (62 + 4) / 100]
+[Stage 2:================================&gt;                       (58 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:====================================&gt;                   (65 + 5) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:==================================&gt;                     (62 + 4) / 100]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=====================================&gt;                  (67 + 5) / 100]
 
-[Stage 2:========================================&gt;               (73 + 4) / 100]
+[Stage 2:========================================&gt;               (72 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:==========================================&gt;             (76 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:==========================================&gt;             (75 + 4) / 100]
+
+[Stage 2:==========================================&gt;             (76 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:===========================================&gt;            (77 + 4) / 100]
@@ -910,61 +926,50 @@ Wall time: 17.6 s
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:============================================&gt;           (79 + 5) / 100]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:============================================&gt;           (80 + 4) / 100]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=============================================&gt;          (81 + 4) / 100]
+
+[Stage 2:=============================================&gt;          (81 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=============================================&gt;          (82 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:==============================================&gt;         (83 + 5) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=============================================&gt;          (82 + 5) / 100]
+
+[Stage 2:==============================================&gt;         (83 + 4) / 100]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:===============================================&gt;        (84 + 5) / 100]
 
 [Stage 2:===============================================&gt;        (85 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:===============================================&gt;        (85 + 5) / 100]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:================================================&gt;       (87 + 4) / 100]
 
-[Stage 2:=================================================&gt;      (89 + 4) / 100]
+[Stage 2:================================================&gt;       (87 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:==================================================&gt;     (90 + 4) / 100]
 
-[Stage 2:==================================================&gt;     (91 + 4) / 100]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:===================================================&gt;    (92 + 4) / 100]
+[Stage 2:===================================================&gt;    (92 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:====================================================&gt;   (93 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:====================================================&gt;   (93 + 5) / 100]
-
-[Stage 2:====================================================&gt;   (94 + 4) / 100]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:====================================================&gt;   (94 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=====================================================&gt;  (95 + 4) / 100]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/09/19 13:00:35 WARN TaskSetManager: Stage 2 contains a task of very large size (1266 KiB). The maximum recommended task size is 1000 KiB.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/09/19 13:39:29 WARN TaskSetManager: Stage 2 contains a task of very large size (1266 KiB). The maximum recommended task size is 1000 KiB.
 
-[Stage 2:=====================================================&gt;  (95 + 5) / 100]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=====================================================&gt;  (96 + 4) / 100]
+[Stage 2:=====================================================&gt;  (96 + 4) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:======================================================&gt; (97 + 3) / 100]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:======================================================&gt; (98 + 2) / 100]
+
+[Stage 2:======================================================&gt; (98 + 2) / 100]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 2:=======================================================&gt;(99 + 1) / 100]
@@ -973,8 +978,8 @@ Wall time: 17.6 s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 60.6 ms, sys: 275 ms, total: 336 ms
-Wall time: 24.6 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 78.6 ms, sys: 234 ms, total: 312 ms
+Wall time: 26.5 s
 </pre></div>
 </div>
 </div>
