@@ -1,0 +1,19 @@
+name: mast-book
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas
+  - intake
+  - matplotlib
+  - requests
+  - zarr
+  - xarray
+  - pyspark
+  - dask
+  - jupyter-book
+  - ghp-import
+  - pip
+  - pip:
+      - xarray-datatree
+  
