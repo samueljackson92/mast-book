@@ -2,8 +2,13 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: MAST Data Catalog
-author: Samuel Jackson
-logo: logo.png
+author: Samuel Jackson, Nathan Cummings, Saiful Khan
+logo: assets/MAST_plasma_image.jpg
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/samueljackson92/mast-book  # Online location of your book
+  branch: main
 
 exclude_patterns: [data/*, 'data']
 only_build_toc_files: true
@@ -26,17 +31,13 @@ bibtex_bibfiles:
   - references.bib
 
 launch_buttons:
+  notebook_interface: classic
   colab_url: "https://colab.research.google.com"
   binderhub_url: "https://mybinder.org" 
   
-# Information about where the book exists on the web
-repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
-
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: true
   use_repository_button: true
+  use_issues_button: true
