@@ -1,11 +1,7 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: intro
 chapters:
-- file: api_reference
-- file: data_archive
-- file: load_spark
-- file: load_huggingface
+- file: rest_api
+- file: graphql_api
+- file: load_data
 

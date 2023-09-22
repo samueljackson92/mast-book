@@ -13,6 +13,9 @@ dependencies:
   - dask
   - jupyter-book
   - ghp-import
+  - pyyaml
+  - s3fs
+  - scikit-image
   - pip
   - pip:
       - xarray-datatree
