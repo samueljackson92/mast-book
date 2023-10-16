@@ -6,6 +6,7 @@ To setup the environment for the notebooks we need to create the local conda env
 
 ```bash
 conda env create -f environment.yml
+conda activate mast-book
 ```
 
 They run the notebooks!
