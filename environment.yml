@@ -3,20 +3,21 @@ channels:
   - conda-forge
 dependencies:
   - python=3.11
-  - pandas
-  - intake
-  - matplotlib
-  - requests
-  - zarr
-  - xarray
-  - pyspark
-  - dask
-  - jupyter-book
-  - ghp-import
-  - pyyaml
-  - s3fs
-  - scikit-image
   - pip
   - pip:
       - xarray-datatree
+      - pandas
+      - intake
+      - matplotlib
+      - requests
+      - zarr
+      - xarray
+      - pyspark
+      - dask
+      - jupyter-book
+      - ghp-import
+      - pyyaml
+      - s3fs
+      - scikit-image
+      - gql
   
