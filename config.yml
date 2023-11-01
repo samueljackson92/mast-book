@@ -1,4 +1,4 @@
-host: https://ada-sam-app.oxfordfun.com
-rest_api: https://ada-sam-app.oxfordfun.com/json
-graphql_api: https://ada-sam-app.oxfordfun.com/graphql
-s3_api: https://ada-sam-minio.oxfordfun.com
+host: http://localhost:8081
+rest_api: http://localhost:8081/json
+graphql_api: http://localhost:8081/graphql
+s3_api: http://localhost:9000

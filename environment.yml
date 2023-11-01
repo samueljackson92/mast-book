@@ -20,4 +20,6 @@ dependencies:
       - s3fs
       - scikit-image
       - gql
+      - ipykernel
+      - requests_toolbelt
   
