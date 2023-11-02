@@ -5,7 +5,7 @@ dependencies:
   - python=3.11
   - pip
   - pip:
-      - xarray-datatree
+      - xarray-datatree==0.0.12
       - pandas
       - intake
       - matplotlib
