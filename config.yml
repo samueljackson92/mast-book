@@ -1,4 +1,4 @@
-host: http://localhost:8081
-rest_api: http://localhost:8081/json
-graphql_api: http://localhost:8081/graphql
-s3_api: http://localhost:9000
+host: http://209.97.185.27:8081
+rest_api: http://209.97.185.27:8081/json
+graphql_api: http://209.97.185.27:8081/graphql
+s3_api: http://209.97.185.27:9000
